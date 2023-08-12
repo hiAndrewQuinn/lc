@@ -38,4 +38,4 @@ if __name__=="__main__":
     sol = Solution()
     input_list = randomList()
     print("Original list: ", input_list)
-    sol.reverseList(randomList())
+    sol.reverseList(input_list)
