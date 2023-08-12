@@ -25,6 +25,10 @@ if __name__ == "__main__":
 
     random_integers = [random.randint(0, 10) for _ in range(list_length)]
 
-    print(random_integers)
+    print("Starting random integers:" + str(random_integers))
 
-    largestRectangleArea(random_integers)
+    print("="*80)
+    ans = largestRectangleArea(random_integers)
+
+    print("="*80)
+    print("Final answer: " + str(ans))
