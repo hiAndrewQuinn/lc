@@ -1,5 +1,6 @@
 import random
 
+
 def largestRectangleArea(heights) -> int:
     heights.append(0)
     stack = [-1]
@@ -8,7 +9,9 @@ def largestRectangleArea(heights) -> int:
     for i in range(len(heights)):
         print(f"heights[{i}] - stack :: {stack}")
         while heights[i] < heights[stack[-1]]:
-            print(f"  !!! heights[{i}] == {heights[i]}  <  {heights[stack[-1]]} == heights[{stack[-1]}]")
+            print(
+                f"  !!! heights[{i}] == {heights[i]}  <  {heights[stack[-1]]} == heights[{stack[-1]}]"
+            )
             h = heights[stack.pop()]
             print(f"    !!! popped {h} from stack.")
             w = i - stack[-1] - 1
@@ -17,8 +20,9 @@ def largestRectangleArea(heights) -> int:
             ans = max(ans, h * w)
         print(f"- while concluded, pushing {i} onto {stack}...")
         stack.append(i)
-    
+
     return ans
+
 
 if __name__ == "__main__":
     list_length = 10  # You can change this value as needed
@@ -27,8 +31,8 @@ if __name__ == "__main__":
 
     print("Starting random integers:" + str(random_integers))
 
-    print("="*80)
+    print("=" * 80)
     ans = largestRectangleArea(random_integers)
 
-    print("="*80)
+    print("=" * 80)
     print("Final answer: " + str(ans))
